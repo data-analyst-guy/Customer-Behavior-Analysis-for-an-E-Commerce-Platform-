@@ -27,3 +27,17 @@ https://support.google.com/analytics/answer/3437719?hl=en
 
 # Query 01: calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
 
+```sql
+SELECT 
+    FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d', _TABLE_SUFFIX)) AS month,
+    SUM(totals.visits) AS visits,
+    SUM(totals.pageviews) AS pageviews,
+    SUM(totals.transactions) AS transactions
+FROM 
+    `bigquery-public-data.google_analytics_sample.ga_sessions_*` 
+WHERE 
+    _TABLE_SUFFIX BETWEEN '20170101' AND '20170331'
+GROUP BY 
+    month
+ORDER BY 
+    month;
