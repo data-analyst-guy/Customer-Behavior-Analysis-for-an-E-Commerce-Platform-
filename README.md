@@ -172,3 +172,25 @@ USING(month)
 | 201706 | 94.02                      | 316.87                         |
 | 201707 | 124.24                     | 334.06                         |
 
+# 📌 Query 05: Average number of transactions per user that made a purchase in July 2017
+```sql
+SELECT 
+    FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month,
+    SUM(totals.transactions)/COUNT(DISTINCT fullVisitorId) AS Avg_total_transactions_per_user
+FROM  
+    `bigquery-public-data.google_analytics_sample.ga_sessions_*`,
+    UNNEST(hits) AS hit,
+    UNNEST(hit.product) AS product
+WHERE 
+    _TABLE_SUFFIX BETWEEN '20170701' AND '20170731'
+    AND totals.transactions >=1  
+    AND product.productRevenue IS NOT NULL 
+GROUP BY month
+--correct
+```
+### 📊 Average Number of Transactions per User in July 2017
+
+| Month  | Avg Total Transactions per User |
+|--------|--------------------------------|
+| 201707 | 4.16390041493776               |
+
