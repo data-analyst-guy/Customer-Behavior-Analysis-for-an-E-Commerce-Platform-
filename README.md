@@ -2,6 +2,8 @@
 
 Data set
 https://support.google.com/analytics/answer/3437719?hl=en 
+Link Bigquery
+https://console.cloud.google.com/bigquery?sq=1002252523164:4ced6907f6cb4a94a1508f16a3d92de2
 
 ## 📌 Dataset Schema
 
@@ -25,7 +27,7 @@ https://support.google.com/analytics/answer/3437719?hl=en
 | `hits.product.productSKU`           | STRING   | Product SKU. |
 | `hits.product.v2ProductName`        | STRING   | Product Name. |
 
-# Query 01: calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
+# 📌 Query 01: calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
 
 ```sql
 SELECT 
@@ -41,3 +43,4 @@ GROUP BY
     month
 ORDER BY 
     month;
+
