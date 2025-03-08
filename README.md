@@ -25,5 +25,5 @@ https://support.google.com/analytics/answer/3437719?hl=en
 | `hits.product.productSKU`           | STRING   | Product SKU. |
 | `hits.product.v2ProductName`        | STRING   | Product Name. |
 
-
+# Query 01: calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
 
