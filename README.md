@@ -44,7 +44,7 @@ GROUP BY
     month
 ORDER BY 
     month;
-
+```
 ### 📊 Query Result
 | Month  | Visits | Pageviews | Transactions |
 |--------|--------|-----------|-------------|
