@@ -51,6 +51,7 @@ ORDER BY
 | 201702 | 62192  | 233373    | 733         |
 | 201703 | 69931  | 259522    | 993         |
 
+
 # 📌 Query 02: Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
 ``` sql
 SELECT 
