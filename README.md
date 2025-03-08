@@ -67,7 +67,7 @@ SELECT
       source
   ORDER BY 
       total_visits DESC
-
+```
 ### 📊 Query Result
 | Source                 | Total Visits | Total Bounces | Bounce Rate (%) |
 |------------------------|-------------|--------------|-----------------|
