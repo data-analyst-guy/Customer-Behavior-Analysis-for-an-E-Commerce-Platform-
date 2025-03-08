@@ -51,8 +51,7 @@ ORDER BY
 | 201701 | 64694  | 257708    | 713         |
 | 201702 | 62192  | 233373    | 733         |
 | 201703 | 69931  | 259522    | 993         |
-
-
+```
 # 📌 Query 02: Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
 ``` sql
 SELECT 
@@ -80,7 +79,7 @@ SELECT
 | ...                    | ...         | ...          | ...             |
 | google.es            | 1           | 1            | 100.00%         |
 | google.ca            | 1           | -            | -               |
-
+```
 # 📌 Query 03: Revenue by traffic source by week, by month in June 2017
 ``` sql
 WITH week_table AS (
@@ -118,7 +117,7 @@ month_table AS (
 SELECT * FROM week_table
 UNION ALL
 SELECT * FROM month_table;
-
+```
 ### 📊 **Query Result (Top 5 & Bottom 5)**
 | Time Type | Time Detail | Source Group       | Total Revenue  |
 |-----------|------------|--------------------|---------------|
@@ -165,7 +164,7 @@ GROUP BY
 SELECT * FROM p
 FULL JOIN non_p  --> full join
 USING(month)
-
+```
 ### 📊 **Query Result: Average Pageviews (Purchasers vs. Non-Purchasers)**
 
 | Month  | Avg Pageviews (Purchasers) | Avg Pageviews (Non-Purchasers) |
