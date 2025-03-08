@@ -44,6 +44,7 @@ GROUP BY
     month
 ORDER BY 
     month;
+
 ### 📊 Query Result
 | Month  | Visits | Pageviews | Transactions |
 |--------|--------|-----------|-------------|
@@ -67,6 +68,7 @@ SELECT
       source
   ORDER BY 
       total_visits DESC
+
 ### 📊 Query Result
 | Source                 | Total Visits | Total Bounces | Bounce Rate (%) |
 |------------------------|-------------|--------------|-----------------|
@@ -132,7 +134,6 @@ SELECT * FROM month_table;
 | week      | 201724     | dealspotr.com     | 72.95        |
 
 # 📌 Query 04: Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.
-
 ```sql
 WITH p as (SELECT 
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month,
@@ -164,6 +165,7 @@ GROUP BY
 SELECT * FROM p
 FULL JOIN non_p  --> full join
 USING(month)
+
 ### 📊 **Query Result: Average Pageviews (Purchasers vs. Non-Purchasers)**
 
 | Month  | Avg Pageviews (Purchasers) | Avg Pageviews (Non-Purchasers) |
