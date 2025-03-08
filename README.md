@@ -1,8 +1,9 @@
 # Explore-Ecommerce-Dataset-SQL-in-BigQuery-
 
-Data set
+### Data set
 https://support.google.com/analytics/answer/3437719?hl=en 
-Link Bigquery
+
+### Link Bigquery
 https://console.cloud.google.com/bigquery?sq=1002252523164:4ced6907f6cb4a94a1508f16a3d92de2
 
 ## 📌 Dataset Schema
