@@ -352,3 +352,16 @@ FROM product_data;
 | 201702 | 21489           | 7360           | 2060         | 34.25            | 9.59          |
 | 201703 | 23549           | 8782           | 2977         | 37.29            | 12.64         |
 
+🎯 Key Takeaways
+✅ March recorded the highest number of transactions, likely due to a successful marketing campaign or increased shopping demand. This strategy could be replicated in other months.
+
+✅ Traffic from YouTube has a high Bounce Rate (66.73%), indicating that users from this source do not engage much after landing on the site. Optimizing landing pages and ad content could help retain these visitors.
+
+✅ Direct traffic & Google are the main revenue sources, contributing the majority of transactions. Efforts should focus on SEO, Google Ads, and other strategies to sustain and grow these channels.
+
+✅ Non-purchasers view more pages than purchasers, which may indicate issues in the checkout process or difficulty in finding the right products. Improving the user experience, especially on product and checkout pages, is crucial.
+
+✅ The average customer makes 4.16 transactions per month, highlighting the presence of repeat buyers. A loyalty program or exclusive offers can help increase customer retention and lifetime value.
+
+✅ Add-to-cart rate is high, but the purchase completion rate remains low (~12%), although there is a positive trend over the months. This suggests that customers are becoming more willing to complete purchases, possibly due to improved checkout UX or effective marketing.
+🔹 Further optimization needed: Streamlining the checkout process, offering incentives, and implementing remarketing strategies could help reduce cart abandonment.
