@@ -194,3 +194,134 @@ GROUP BY month
 |--------|--------------------------------|
 | 201707 | 4.16390041493776               |
 
+# 📌 Query 06: Average amount of money spent per session. Only include purchaser data in July 2017
+```sql
+SELECT 
+    FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month,
+    ROUND(SUM(product.productRevenue)/COUNT(totals.visits)/1000000,2) AS avg_revenue_by_user_per_visit
+FROM  
+    `bigquery-public-data.google_analytics_sample.ga_sessions_*`,
+    UNNEST(hits) AS hit,
+    UNNEST(hit.product) AS product
+WHERE 
+    _TABLE_SUFFIX BETWEEN '20170701' AND '20170731'
+    AND totals.transactions IS NOT NULL  
+    AND product.productRevenue IS NOT NULL 
+GROUP BY month
+```
+| Month  | Avg Revenue by User per Visit |
+|--------|------------------------------|
+| 201707 | 43.86                        |
+
+# 📌 Query 07: Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
+```sql
+WITH product as (
+    SELECT
+        fullVisitorId,
+        product.v2ProductName,
+        product.productRevenue,
+        product.productQuantity 
+    FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`,
+        UNNEST(hits),
+        UNNEST(product) as product
+    Where 
+        _table_suffix between '20170701' and '20170731'
+        AND product.productRevenue IS NOT NULL
+)
+
+SELECT
+    product.v2ProductName as other_purchased_products,
+    SUM(product.productQuantity) as quantity
+FROM product
+WHERE 
+    product.fullVisitorId IN (
+        SELECT fullVisitorId
+        FROM product
+        WHERE product.v2ProductName = "YouTube Men's Vintage Henley"
+
+    )
+    AND product.v2ProductName NOT LIKE "YouTube Men's Vintage Henley"
+GROUP BY other_purchased_products
+ORDER BY quantity desc
+```
+| Other Purchased Products                                 | Quantity |
+|----------------------------------------------------------|----------|
+| Google Sunglasses                                        | 20       |
+| Google Women's Vintage Hero Tee Black                   | 7        |
+| SPF-15 Slim & Slender Lip Balm                          | 6        |
+| Google Women's Short Sleeve Hero Tee Red Heather        | 4        |
+| YouTube Men's Fleece Hoodie Black                       | 3        |
+| Google Men's Short Sleeve Badge Tee Charcoal            | 3        |
+| 22 oz YouTube Bottle Infuser                            | 2        |
+| Android Men's Vintage Henley                            | 2        |
+| YouTube Twill Cap                                       | 2        |
+| Google Men's Short Sleeve Hero Tee Charcoal             | 2        |
+| Red Shine 15 oz Mug                                     | 2        |
+| Google Doodle Decal                                     | 2        |
+| Recycled Mouse Pad                                      | 2        |
+| Android Women's Fleece Hoodie                           | 2        |
+| Android Wool Heather Cap Heather/Black                 | 2        |
+| Crunch Noise Dog Toy                                    | 2        |
+| Google Men's Vintage Badge Tee White                   | 1        |
+| Google Slim Utility Travel Bag                         | 1        |
+| YouTube Women's Short Sleeve Hero Tee Charcoal         | 1        |
+| Google Men's Performance Full Zip Jacket Black         | 1        |
+| 26 oz Double Wall Insulated Bottle                     | 1        |
+| Android Men's Short Sleeve Hero Tee White              | 1        |
+| Android Men's Pep Rally Short Sleeve Tee Navy          | 1        |
+| YouTube Men's Short Sleeve Hero Tee Black              | 1        |
+| Google Men's Pullover Hoodie Grey                      | 1        |
+| YouTube Men's Short Sleeve Hero Tee White              | 1        |
+| Google Men's 100% Cotton Short Sleeve Hero Tee Red     | 1        |
+| Android Men's Vintage Tank                             | 1        |
+| Google Men's Zip Hoodie                                | 1        |
+| Google Twill Cap                                       | 1        |
+| Google Men's Long & Lean Tee Grey                     | 1        |
+| Google Men's Long Sleeve Raglan Ocean Blue            | 1        |
+| YouTube Custom Decals                                  | 1        |
+| Four Color Retractable Pen                             | 1        |
+| Google Laptop and Cell Phone Stickers                 | 1        |
+| Google Men's Vintage Badge Tee Black                  | 1        |
+| Google Men's Long & Lean Tee Charcoal                 | 1        |
+| Google Men's Bike Short Sleeve Tee Charcoal           | 1        |
+| Google 5-Panel Cap                                    | 1        |
+| Google Toddler Short Sleeve T-shirt Grey              | 1        |
+| Android Sticker Sheet Ultra Removable                | 1        |
+| Google Men's Performance 1/4 Zip Pullover Heather/Black | 1        |
+| YouTube Hard Cover Journal                            | 1        |
+| Android BTTF Moonshot Graphic Tee                    | 1        |
+| Google Men's Airflow 1/4 Zip Pullover Black           | 1        |
+| Android Men's Short Sleeve Hero Tee Heather          | 1        |
+| YouTube Women's Short Sleeve Tri-blend Badge Tee Charcoal | 1    |
+| YouTube Men's Long & Lean Tee Charcoal               | 1        |
+| Google Women's Long Sleeve Tee Lavender              | 1        |
+| 8 pc Android Sticker Sheet                           | 1        |
+# 📌 "Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
+```sql
+WITH product_data AS (
+    SELECT
+        FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month,
+        COUNT(CASE WHEN eCommerceAction.action_type = '2' THEN product.v2ProductName END) AS num_product_view,
+        COUNT(CASE WHEN eCommerceAction.action_type = '3' THEN product.v2ProductName END) AS num_add_to_cart,
+        COUNT(CASE WHEN eCommerceAction.action_type = '6' AND product.productRevenue IS NOT NULL THEN product.v2ProductName END) AS num_purchase
+    FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`,
+         UNNEST(hits) AS hits,
+         UNNEST(hits.product) AS product
+    WHERE _TABLE_SUFFIX BETWEEN '20170101' AND '20170331'
+          AND eCommerceAction.action_type IN ('2', '3', '6')
+    GROUP BY month
+    ORDER BY month
+)
+
+SELECT
+    *,
+    ROUND(num_add_to_cart / num_product_view * 100, 2) AS add_to_cart_rate,
+    ROUND(num_purchase / num_product_view * 100, 2) AS purchase_rate
+FROM product_data;
+```
+| month  | num_product_view | num_add_to_cart | num_purchase | add_to_cart_rate | purchase_rate |
+|--------|-----------------|----------------|--------------|------------------|---------------|
+| 201701 | 25787           | 7342           | 2143         | 28.47            | 8.31          |
+| 201702 | 21489           | 7360           | 2060         | 34.25            | 9.59          |
+| 201703 | 23549           | 8782           | 2977         | 37.29            | 12.64         |
+
