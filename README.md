@@ -352,7 +352,7 @@ FROM product_data;
 | 201702 | 21489           | 7360           | 2060         | 34.25            | 9.59          |
 | 201703 | 23549           | 8782           | 2977         | 37.29            | 12.64         |
 
-🎯 Key Takeaways
+## 🎯 Key Takeaways  
 ✅ March recorded the highest number of transactions, likely due to a successful marketing campaign or increased shopping demand. This strategy could be replicated in other months.  
 ✅ Traffic from YouTube has a high Bounce Rate (66.73%), indicating that users from this source do not engage much after landing on the site. Optimizing landing pages and ad content could help retain these visitors.  
 ✅ Direct traffic & Google are the main revenue sources, contributing the majority of transactions. Efforts should focus on SEO, Google Ads, and other strategies to sustain and grow these channels.  
