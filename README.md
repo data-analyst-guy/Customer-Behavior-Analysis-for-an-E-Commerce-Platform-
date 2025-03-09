@@ -51,7 +51,7 @@ ORDER BY
 | 201701 | 64694  | 257708    | 713         |
 | 201702 | 62192  | 233373    | 733         |
 | 201703 | 69931  | 259522    | 993         |
-```
+
 # 📌 Query 02: Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
 ``` sql
 SELECT 
@@ -79,7 +79,7 @@ SELECT
 | ...                    | ...         | ...          | ...             |
 | google.es            | 1           | 1            | 100.00%         |
 | google.ca            | 1           | -            | -               |
-```
+
 # 📌 Query 03: Revenue by traffic source by week, by month in June 2017
 ``` sql
 WITH week_table AS (
@@ -296,7 +296,7 @@ ORDER BY quantity desc
 | YouTube Men's Long & Lean Tee Charcoal               | 1        |
 | Google Women's Long Sleeve Tee Lavender              | 1        |
 | 8 pc Android Sticker Sheet                           | 1        |
-# 📌 "Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
+# 📌 Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
 ```sql
 WITH product_data AS (
     SELECT
