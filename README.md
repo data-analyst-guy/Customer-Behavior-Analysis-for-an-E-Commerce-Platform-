@@ -10,19 +10,19 @@ Time Period: Data spans from August 1, 2016, to August 1, 2017.
 Tracking System: Google Analytics 360 (GA premium version).
 Hosted on: Google BigQuery (bigquery-public-data.google_analytics_sample.ga_sessions_*).
 
-🔍 Key Features
-The dataset contains detailed session-based analytics, including:
-✅ User Behavior: Visits, pageviews, bounce rate, session duration.
-✅ E-commerce Transactions: Orders, revenue, purchased products.
-✅ Traffic Sources: Organic search, direct, social, referral, etc.
-✅ Product Information: SKU, product name, quantity sold, revenue generated.
+🔍 **Key Features**  
+The dataset contains detailed session-based analytics, including:  
+✅ **User Behavior**: Visits, pageviews, bounce rate, session duration.  
+✅ **E-commerce Transactions**: Orders, revenue, purchased products.  
+✅ **Traffic Sources**: Organic search, direct, social, referral, etc.  
+✅ **Product Information**: SKU, product name, quantity sold, revenue generated.  
 
-🎯 Use Cases in My Project
-I used this dataset to analyze customer behavior and optimize e-commerce performance. Specifically, I:
+🎯 **Use Cases in My Project**  
+I used this dataset to analyze customer behavior and optimize e-commerce performance. Specifically, I:  
 
-Queried session data to understand conversion rates from different traffic sources.
-Identified top-selling products based on revenue and purchase frequency.
-Analyzed the customer journey to determine the most effective acquisition channels.
+- Queried session data to understand conversion rates from different traffic sources.  
+- Identified top-selling products based on revenue and purchase frequency.  
+- Analyzed the customer journey to determine the most effective acquisition channels.  
 
 ### Data set
 https://support.google.com/analytics/answer/3437719?hl=en 
