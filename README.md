@@ -209,6 +209,7 @@ WHERE
     AND product.productRevenue IS NOT NULL 
 GROUP BY month
 ```
+### 📊 Query Result
 | Month  | Avg Revenue by User per Visit |
 |--------|------------------------------|
 | 201707 | 43.86                        |
@@ -244,6 +245,7 @@ WHERE
 GROUP BY other_purchased_products
 ORDER BY quantity desc
 ```
+### 📊 Query Result
 | Other Purchased Products                                 | Quantity |
 |----------------------------------------------------------|----------|
 | Google Sunglasses                                        | 20       |
@@ -319,6 +321,7 @@ SELECT
     ROUND(num_purchase / num_product_view * 100, 2) AS purchase_rate
 FROM product_data;
 ```
+### 📊 Query Result
 | month  | num_product_view | num_add_to_cart | num_purchase | add_to_cart_rate | purchase_rate |
 |--------|-----------------|----------------|--------------|------------------|---------------|
 | 201701 | 25787           | 7342           | 2143         | 28.47            | 8.31          |
