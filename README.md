@@ -276,59 +276,21 @@ WHERE
 GROUP BY other_purchased_products
 ORDER BY quantity desc
 ```
-### 📊 Query Result
-| Other Purchased Products                                 | Quantity |
-|----------------------------------------------------------|----------|
-| Google Sunglasses                                        | 20       |
-| Google Women's Vintage Hero Tee Black                   | 7        |
-| SPF-15 Slim & Slender Lip Balm                          | 6        |
-| Google Women's Short Sleeve Hero Tee Red Heather        | 4        |
-| YouTube Men's Fleece Hoodie Black                       | 3        |
-| Google Men's Short Sleeve Badge Tee Charcoal            | 3        |
-| 22 oz YouTube Bottle Infuser                            | 2        |
-| Android Men's Vintage Henley                            | 2        |
-| YouTube Twill Cap                                       | 2        |
-| Google Men's Short Sleeve Hero Tee Charcoal             | 2        |
-| Red Shine 15 oz Mug                                     | 2        |
-| Google Doodle Decal                                     | 2        |
-| Recycled Mouse Pad                                      | 2        |
-| Android Women's Fleece Hoodie                           | 2        |
-| Android Wool Heather Cap Heather/Black                 | 2        |
-| Crunch Noise Dog Toy                                    | 2        |
-| Google Men's Vintage Badge Tee White                   | 1        |
-| Google Slim Utility Travel Bag                         | 1        |
-| YouTube Women's Short Sleeve Hero Tee Charcoal         | 1        |
-| Google Men's Performance Full Zip Jacket Black         | 1        |
-| 26 oz Double Wall Insulated Bottle                     | 1        |
-| Android Men's Short Sleeve Hero Tee White              | 1        |
-| Android Men's Pep Rally Short Sleeve Tee Navy          | 1        |
-| YouTube Men's Short Sleeve Hero Tee Black              | 1        |
-| Google Men's Pullover Hoodie Grey                      | 1        |
-| YouTube Men's Short Sleeve Hero Tee White              | 1        |
-| Google Men's 100% Cotton Short Sleeve Hero Tee Red     | 1        |
-| Android Men's Vintage Tank                             | 1        |
-| Google Men's Zip Hoodie                                | 1        |
-| Google Twill Cap                                       | 1        |
-| Google Men's Long & Lean Tee Grey                     | 1        |
-| Google Men's Long Sleeve Raglan Ocean Blue            | 1        |
-| YouTube Custom Decals                                  | 1        |
-| Four Color Retractable Pen                             | 1        |
-| Google Laptop and Cell Phone Stickers                 | 1        |
-| Google Men's Vintage Badge Tee Black                  | 1        |
-| Google Men's Long & Lean Tee Charcoal                 | 1        |
-| Google Men's Bike Short Sleeve Tee Charcoal           | 1        |
-| Google 5-Panel Cap                                    | 1        |
-| Google Toddler Short Sleeve T-shirt Grey              | 1        |
-| Android Sticker Sheet Ultra Removable                | 1        |
-| Google Men's Performance 1/4 Zip Pullover Heather/Black | 1        |
-| YouTube Hard Cover Journal                            | 1        |
-| Android BTTF Moonshot Graphic Tee                    | 1        |
-| Google Men's Airflow 1/4 Zip Pullover Black           | 1        |
-| Android Men's Short Sleeve Hero Tee Heather          | 1        |
-| YouTube Women's Short Sleeve Tri-blend Badge Tee Charcoal | 1    |
-| YouTube Men's Long & Lean Tee Charcoal               | 1        |
-| Google Women's Long Sleeve Tee Lavender              | 1        |
-| 8 pc Android Sticker Sheet                           | 1        |
+### 📊 Query Result (Top Purchased Products)
+| Other Purchased Products                         | Quantity |
+|--------------------------------------------------|----------|
+| Google Sunglasses                                | 20       |
+| Google Women's Vintage Hero Tee Black           | 7        |
+| SPF-15 Slim & Slender Lip Balm                  | 6        |
+| Google Women's Short Sleeve Hero Tee Red        | 4        |
+| YouTube Men's Fleece Hoodie Black               | 3        |
+| ...                                             | ...      |
+| Google Men's Airflow 1/4 Zip Pullover Black     | 1        |
+| Android Men's Short Sleeve Hero Tee Heather    | 1        |
+| YouTube Men's Long & Lean Tee Charcoal         | 1        |
+| Google Women's Long Sleeve Tee Lavender        | 1        |
+| 8 pc Android Sticker Sheet                     | 1        |
+
 # 📌 Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
 ```sql
 WITH product_data AS (
