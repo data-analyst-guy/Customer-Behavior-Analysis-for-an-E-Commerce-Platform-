@@ -5,10 +5,13 @@
 The Google Analytics Sample Dataset is a public dataset provided by Google through BigQuery. It contains real-world e-commerce data from the Google Merchandise Store, allowing analysts to practice SQL queries and data analysis techniques.
 
 📂 Dataset Overview
-Source: Google Merchandise Store (Google’s official online store).
-Time Period: Data spans from August 1, 2016, to August 1, 2017.
-Tracking System: Google Analytics 360 (GA premium version).
-Hosted on: Google BigQuery (bigquery-public-data.google_analytics_sample.ga_sessions_*).
+Source: Google Merchandise Store (Google’s official online store).  
+Time Period: Data spans from August 1, 2016, to August 1, 2017.  
+Tracking System: Google Analytics 360 (GA premium version).  
+Hosted on: Google BigQuery (bigquery-public-data.google_analytics_sample.ga_sessions_*).  
+
+### Data set
+https://support.google.com/analytics/answer/3437719?hl=en 
 
 🔍 **Key Features**  
 The dataset contains detailed session-based analytics, including:  
@@ -24,8 +27,7 @@ I used this dataset to analyze customer behavior and optimize e-commerce perform
 - Identified top-selling products based on revenue and purchase frequency.  
 - Analyzed the customer journey to determine the most effective acquisition channels.  
 
-### Data set
-https://support.google.com/analytics/answer/3437719?hl=en 
+
 
 ### Link Practice Bigquery
 https://console.cloud.google.com/bigquery?sq=1002252523164:4ced6907f6cb4a94a1508f16a3d92de2
