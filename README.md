@@ -34,6 +34,9 @@ https://console.cloud.google.com/bigquery?sq=1002252523164:4ced6907f6cb4a94a1508
 
 ## 📌 Dataset Schema
 
+<details>
+  <summary>Click to expand</summary>
+
 | Field Name                         | Data Type | Description |
 |-------------------------------------|----------|-------------|
 | `fullVisitorId`                    | STRING   | The unique visitor ID. |
@@ -53,6 +56,9 @@ https://console.cloud.google.com/bigquery?sq=1002252523164:4ced6907f6cb4a94a1508
 | `hits.product.productRevenue`       | INTEGER  | Product revenue (value * 10^6). |
 | `hits.product.productSKU`           | STRING   | Product SKU. |
 | `hits.product.v2ProductName`        | STRING   | Product Name. |
+
+</details>
+
 
 # 📌 Query 01: calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
 
