@@ -1,5 +1,12 @@
 # Explore-Ecommerce-Dataset-SQL-in-BigQuery-
 
+### 🎯 **Use Cases in My Project**  
+I used this dataset to analyze customer behavior and optimize e-commerce performance. Specifically, I:  
+
+- Queried session data to understand conversion rates from different traffic sources.  
+- Identified top-selling products based on revenue and purchase frequency.  
+- Analyzed the customer journey to determine the most effective acquisition channels.  
+
 ### Project Overview
 📌 Introduction
 The Google Analytics Sample Dataset is a public dataset provided by Google through BigQuery. It contains real-world e-commerce data from the Google Merchandise Store, allowing analysts to practice SQL queries and data analysis techniques.
@@ -20,15 +27,6 @@ The dataset contains detailed session-based analytics, including:
 ✅ **E-commerce Transactions**: Orders, revenue, purchased products.  
 ✅ **Traffic Sources**: Organic search, direct, social, referral, etc.  
 ✅ **Product Information**: SKU, product name, quantity sold, revenue generated.  
-
-🎯 **Use Cases in My Project**  
-I used this dataset to analyze customer behavior and optimize e-commerce performance. Specifically, I:  
-
-- Queried session data to understand conversion rates from different traffic sources.  
-- Identified top-selling products based on revenue and purchase frequency.  
-- Analyzed the customer journey to determine the most effective acquisition channels.  
-
-
 
 ### Link Practice Bigquery
 https://console.cloud.google.com/bigquery?sq=1002252523164:4ced6907f6cb4a94a1508f16a3d92de2
