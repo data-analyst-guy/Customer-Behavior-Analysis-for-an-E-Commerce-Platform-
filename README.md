@@ -1,6 +1,6 @@
 # Explore-Ecommerce-Dataset-SQL-in-BigQuery-
 
-### Google Analytics Sample Dataset – Project Overview
+### Project Overview
 📌 Introduction
 The Google Analytics Sample Dataset is a public dataset provided by Google through BigQuery. It contains real-world e-commerce data from the Google Merchandise Store, allowing analysts to practice SQL queries and data analysis techniques.
 
