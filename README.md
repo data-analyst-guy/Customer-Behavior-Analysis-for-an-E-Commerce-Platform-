@@ -1,4 +1,4 @@
-# Explore-Ecommerce-Dataset-SQL-in-BigQuery-
+# Customer Behavior Analysis for an E-Commerce Platform 
 
 ### 🎯 **Use Cases in My Project**  
 I used this dataset to analyze customer behavior and optimize e-commerce performance. Specifically, I:  
